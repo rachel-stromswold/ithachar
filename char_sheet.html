@@ -1,30 +1,70 @@
 <html>
 <link rel="stylesheet" type="text/css" href="char_sheet.css">
 <body>
-<!--<canvas id="charSheet" width="640" height="828"></canvas>
+<script src="ui.js"></script>
 
-<script>
-var canvas=document.getElementById("charSheet");
-var c=canvas.getContext(2d);
-
-
-</script>-->
 <form>
-<p class="basicInfo">Character Name:</p><input type="text" class="basicInfo" id="basic1"/>
-<p class="basicInfo">Player Name:</p><input type="text" class="basicInfo" id="basic2" />
-<p class="basicInfo">Class:</p><input type="text" class="basicInfo" id="basic3" /><!--TODO: add a suggestion dropdown-->
-<p class="basicInfo">Race:</p><input type="text" class="basicInfo" id="basic4" /><!--TODO: add a suggestion dropdown-->
-<p class="basicInfo">Alignment:</p><select class="basicInfo" id="basic5"><option value="L">Lawful</option><option value="N">Neutral</option><option value="E">Chaotic</option></select>
-<select class="basicInfo" id="basic6"><option value="G">Good</option><option value="N">Neutral</option><option value="E">Evil</option></select>
-<p class="basicInfo">Deity:</p><input type="text" class="basicInfo" id="basic5" /><!--TODO: add a suggestion dropdown-->
-<p class="basicInfo">Size:</p><input type="text" class="basicInfo" id="basic6" /><!--TODO: add a suggestion dropdown-->
-<p class="basicInfo">Age:</p><input type="text" class="basicInfo" id="basic7" /><!--TODO: add a suggestion dropdown-->
-<p class="basicInfo">Gender:</p><input type="radio" name="sex" class="basicInfo" id="basic8" /><input type="radio" name="sex" class="basicInfo" id="basic8"><!--TODO: add a suggestion dropdown-->
-<p class="basicInfo">Height:</p><input type="text" class="basicInfo" id="basic9" />
-<p class="basicInfo">Weight:</p><input type="text" class="basicInfo" id="basic10" />
-<p class="basicInfo">Eyes:</p><input type="text" class="basicInfo" id="basic11" />
-<p class="basicInfo">Hair:</p><input type="text" class="basicInfo" id="basic12" />
-<p class="basicInfo">Skin:</p><input type="text" class="basicInfo" id="basic13" />
+<div class="basicInfo">Character Name:<input type="text" id="basic1"/></div>
+<div class="basicInfo">Player Name:<input type="text" id="basic2" /></div>
+<div class="basicInfo">Class:<input type="text" id="basic3" /></div><!--TODO: add a suggestion dropdown-->
+<div class="basicInfo">Race:<input type="text" id="basic4" /></div><!--TODO: add a suggestion dropdown-->
+<div class="basicInfo">Alignment:<select  id="basic5"><option value="L">Lawful</option><option value="N">Neutral</option><option value="E">Chaotic</option></select>
+<select class="basicInfo" id="basic6"><option value="G">Good</option><option value="N">Neutral</option><option value="E">Evil</option></select></div>
+<div class="basicInfo">Deity:<input type="text"  id="basic5" /></div><!--TODO: add a suggestion dropdown-->
+<div class="basicInfo">Size:<input type="text" id="basic6" /></div><!--TODO: add a suggestion dropdown-->
+<div class="basicInfo">Age:<input type="text" id="basic7" /></div><!--TODO: add a suggestion dropdown-->
+<div class="basicInfo">Gender: M:<input type="radio" name="sex" value="m" id="basic8" /> F:<input type="radio" name="sex" value="f"  id="basic8"></div>
+<div class="basicInfo">Height:<input type="text" id="basic9" /></div>
+<div class="basicInfo">Weight:<input type="text" id="basic10" /></div>
+<div class="basicInfo">Eyes:<input type="text" id="basic11" /></div>
+<div class="basicInfo">Hair:<input type="text" id="basic12" /></div>
+<div class="basicInfo">Skin:<input type="text" id="basic13" /></div></br>
+<div id="abilities">
+<table>
+<tr>
+	<td>STR</td>
+	<td><input type="number" class="smallBox" id="ab1_1" oninput="updateMods(1)" /></td>
+	<td><input type="text" class="smallBox" id="ab1_2" readonly="readonly" /></td>
+	<td><input type="number" class="smallBox" id="ab1_3" /></td>
+	<td><input type="number" class="smallBox" id="ab1_3" /></td>
+</tr>
+<tr>
+	<td>DEX</td>
+	<td><input type="number" class="smallBox" id="ab2_1" oninput="updateMods(2)" /></td>
+	<td><input type="text" class="smallBox" id="ab2_2" readonly="readonly" /></td>
+	<td><input type="number" class="smallBox" id="ab2_3" /></td>
+	<td><input type="number" class="smallBox" id="ab2_3" /></td>
+</tr>
+<tr>
+	<td>CON</td>
+	<td><input type="number" class="smallBox" id="ab3_1" oninput="updateMods(3)" /></td>
+	<td><input type="text" class="smallBox" id="ab3_2" readonly="readonly" /></td>
+	<td><input type="number" class="smallBox" id="ab3_3" /></td>
+	<td><input type="number" class="smallBox" id="ab3_3" /></td>
+</tr>
+<tr>
+	<td>INT</td>
+	<td><input type="number" class="smallBox" id="ab4_1" oninput="updateMods(4)" /></td>
+	<td><input type="text" class="smallBox" id="ab4_2" readonly="readonly" /></td>
+	<td><input type="number" class="smallBox" id="ab4_3" /></td>
+	<td><input type="number" class="smallBox" id="ab4_3" /></td>
+</tr>
+<tr>
+	<td>WIS</td>
+	<td><input type="number" class="smallBox" id="ab5_1" oninput="updateMods(5)" /></td>
+	<td><input type="text" class="smallBox" id="ab5_2" readonly="readonly" /></td>
+	<td><input type="number" class="smallBox" id="ab5_3" /></td>
+	<td><input type="number" class="smallBox" id="ab5_3" /></td>
+</tr>
+<tr>
+	<td>CHA</td>
+	<td><input type="number" class="smallBox" id="ab5_1" oninput="updateMods(6)" /></td>
+	<td><input type="text" class="smallBox" id="ab5_2" readonly="readonly" /></td>
+	<td><input type="number" class="smallBox" id="ab5_3" /></td>
+	<td><input type="number" class="smallBox" id="ab1_3" /></td>
+</tr>
+</table>
+</div>
 </form>
 
 </body>

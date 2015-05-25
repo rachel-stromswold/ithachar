@@ -4,4 +4,14 @@ function getMousePos(can, evt){
 }
 
 function enterText(){
+}
+
+function updateMods(num){
+	var val=document.getElementById("ab"+num+"_1").value;
+	var temp=Math.floor(val/2 - 5);
+	if(temp>=0)
+		document.getElementById("ab"+num+"_2").value="+"+temp;
+	else
+		document.getElementById("ab"+num+"_2").value=""+temp;
+
 } 
