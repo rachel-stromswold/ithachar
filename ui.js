@@ -1,5 +1,5 @@
 function getMousePos(can, evt){
-	var rect=can.getBoundingRect();
+	var rect = can.getBoundingRect();
 	return {x:evt.clientX-rect.left, y:evt.clientY-rect.top};//not a class description like in c++ even though it looks like it :p
 }
 
@@ -15,3 +15,11 @@ function updateMods(num){
 		document.getElementById("ab"+num+"_2").value=""+temp;
 
 } 
+
+function collapseField(field){
+    var fieldObject = document.getElementById(field);
+    if(field.style != "none")
+	field.style.display = "none";
+    else
+	field.style.display = "inline";
+}

@@ -1,3 +1,8 @@
+@keyframes disappear {
+    from { opacity:1.0;}
+    to {opacity:0.0;}
+}
+
 .basicInfo{
 	margin-top:5px;
 	margin-bottom:5px;
@@ -5,11 +10,67 @@
 	white-space:nowrap;
 }
 
+input{
+    background: rgba(255,255,255,1);
+    color: black;
+    border-bottom: black solid 1px;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    margin-right:5px;
+
+}
+
+.thirdRow input{
+    width:75%;
+}
+
+.thirdRow rd{
+    margin-right:0;
+}
 .smallBox{
 	float:left;
-	width:48px;
+	width:40px;
+	border:black solid 1px;
+	margin-right:2px;
 }
 
 p.under{
 	font-size:50%
 }
+
+table{
+    margin-left:20%;
+    margin-right:20%;
+}
+
+.title{
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    padding: 2px;
+    text-align:center;
+}
+
+.subtitle{
+    font-weight: normal;
+    font-size:10px;
+}
+
+th{
+    font-size:10px;
+    text-align:left;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button,
+{ 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number]
+{
+    -moz-appearance:textfield;
+}
+
