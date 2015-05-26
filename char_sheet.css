@@ -1,65 +1,58 @@
+@-webkit-keyframes disappear {//Chrome, Opera, Safari support (IDK if this is still a requirement, someone should test it.)
+  0%   {opacity:1.0;}
+  100% {opacity:0.0;}
+}
+
 @keyframes disappear {
-    from { opacity:1.0;}
-    to {opacity:0.0;}
+  0%   {opacity:1.0;}
+  100% {opacity:0.0;}
 }
 
-.basicInfo{
-	margin-top:5px;
-	margin-bottom:5px;
-	display:inline;
-	white-space:nowrap;
+.basicInfo{ 
+  width:auto;
+  overflow:hidden;
+  display:inline-block;
 }
 
-input{
-    background: rgba(255,255,255,1);
-    color: black;
-    border-bottom: black solid 1px;
-    border-top:none;
-    border-left:none;
-    border-right:none;
-    margin-right:5px;
-
+input.under{
+  background: rgba(255,255,255,1);
+  color: black;
+  border-bottom: black solid 1px;
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  margin-right:5px;
 }
 
-.thirdRow input{
-    width:75%;
+.caption{
+  display:block;
+  margin-top:0px;
+  font-size:10px;
+  font-weight:bold;
 }
 
-.thirdRow rd{
-    margin-right:0;
+.floater{
+  float:left;
 }
+
 .smallBox{
-	float:left;
-	width:40px;
-	border:black solid 1px;
-	margin-right:2px;
-}
-
-p.under{
-	font-size:50%
-}
-
-table{
-    margin-left:20%;
-    margin-right:20%;
+  float:left;
+  width:40px;
+  border:black solid 1px;
+  margin-right:2px;
 }
 
 .title{
-    font-weight: bold;
-    color: white;
-    background-color: black;
-    padding: 2px;
-    text-align:center;
-}
-
-.subtitle{
-    font-weight: normal;
-    font-size:10px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  padding: 2px;
+  text-align:center;
 }
 
 th{
-    font-size:10px;
-    text-align:left;
+  font-size:10px;
+  text-align:left;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -71,6 +64,6 @@ input[type=number]::-webkit-outer-spin-button,
 
 input[type=number]
 {
-    -moz-appearance:textfield;
+  -moz-appearance:textfield;
 }
 

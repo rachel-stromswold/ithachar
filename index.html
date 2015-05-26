@@ -2,127 +2,170 @@
 <link rel="stylesheet" type="text/css" href="char_sheet.css">
 <body>
 <script src="ui.js"></script>
+<script src="jquery-2.1.4.min.js"></script>
 
-<table>
+<div id="container" style="width:850px;margin-left:auto;margin-right:auto;">
+
 <form>
-<tr class = "zerothRow">
-  <td><div class="basicInfo"><input type="text" id="basic1"/></div></td> 
-  <td><div class="basicInfo"><input type="text" id="basic2" /></div></td>
-</tr>
-<tr>
-  <td>Character Name</td>
-  <td>Player Name</td>
-</tr>
-<tr class = "firstRow">
-  <td><div class="basicInfo"><input type="text" id="basic3" /></div></td><!--TODO: add a suggestion dropdown-->
-  <td><div class="basicInfo"><input type="text" id="basic4" /></div></td><!--TODO: add a suggestion dropdown-->
 
-  <td><div class="basicInfo"><select  id="basic5"><option value="L">Lawful</option><option value="N">Neutral</option><option value="E">Chaotic</option></select>
-      <select class="basicInfo" id="basic6"><option value="G">Good</option><option value="N">Neutral</option><option value="E">Evil</option></select></div></td>
-    <td><div class="basicInfo">M:<input type="radio" name="sex" value="m" id="basic8" /> F:<input type="radio" name="sex" value="f"  id="basic8"></div></td>
-</tr>
-<tr>
-  <td>Class</td>
-  <td>Race</td>
-  <td>Alignment</td>
-  <td>Gender</td>
-</tr>
-<tr class = "secondRow">
-  <td><div class="basicInfo"><input type="text"  id="basic5" /></div></td><!--TODO: add a suggestion dropdown-->
-  <td><div class="basicInfo"><input type="text" id="basic6" /></div></td><!--TODO: add a suggestion dropdown-->
-  <td><div class="basicInfo"><input type="text" id="basic7" /></div></td><!--TODO: add a suggestion dropdown-->
+<div id="characterHeader"><!--TODO: Make collapsable-->
 
-</tr>
-<tr>
-  <td>Deity</td>
-  <td>Size</td>
-  <td>Age</td>
-  
-</tr>
-<table>
-<tr class = "thirdRow">
-  <td><div class="basicInfo"><input type="text" id="basic9" /></div></td>
-  <td><div class="basicInfo"><input type="text" id="basic10" /></div></td>
-  <td><div class="basicInfo"><input type="text" id="basic11" /></div></td>
-  <td><div class="basicInfo"><input type="text" id="basic12" /></div></td>
-  <td><div class="basicInfo"><input type="text" id="basic13" /></div></br></td>
-</tr>
-<tr>
-  <td>Height</td>
-  <td>Weight</td>
-  <td>Eyes</td>
-  <td>Hair</td>
-  <td>Skin</td>
-</tr>
-</table>
-  
-</table>
-<div id="abilities">
+<div class="basicInfo"><!--Character Name-->
+  <input type="text" id="basic1" class="under" style="display:block"/>
+  <p class="caption">Character Name</p>
+</div>
+<div class="basicInfo"><!--Player Name-->
+  <input type="text" id="basic2" class="under" />
+  <p class="caption">Player Name</p>
+</div><br>
+<div class="basicInfo"><!--Class-->
+  <input type="text" id="basic2" class="under" />
+  <p class="caption">Class and Level</p>
+</div>
+<div class="basicInfo"><!--Race-->
+  <input type="text" id="basic2" class="under" />
+  <p class="caption">Race</p>
+</div>
+<div class="basicInfo"><!--Alignment-->
+  <div><select id="basic5"><option value="L">Lawful</option><option value="N">Neutral</option><option value="E">Chaotic</option></select>
+       <select id="basic6"><option value="G">Good</option><option value="N">Neutral</option><option value="E">Evil</option></select></div>
+  <p class="caption">Alignment</p>
+</div>
+<div class="basicInfo"><!--Gender-->
+  <div>M:<input type="radio" name="sex" value="m" id="basic8" /> F:<input type="radio" name="sex" value="f"  id="basic8" /></div>
+  <p class="caption">Gender</p>
+</div><br>
+<div class="basicInfo"><!--Deity-->
+  <input type="text" id="basic2" class="under" style="width:128px"/>
+  <p class="caption">Deity</p>
+</div>
+<div class="basicInfo"><!--Size-->
+  <input type="text" id="basic2" class="under" style="width:64px"/>
+  <p class="caption">Size</p>
+</div>
+<div class="basicInfo"><!--Age-->
+  <input type="text" id="basic2" class="under" style="width:64px"/>
+  <p class="caption">Age</p>
+</div>
+<div class="basicInfo"><!--Height-->
+  <input type="text" id="basic2" class="under" style="width:64px" />
+  <p class="caption">Height</p>
+</div>
+<div class="basicInfo"><!--Weight-->
+  <input type="text" id="basic2" class="under" style="width:64px" />
+  <p class="caption">Weight</p>
+</div>
+<div class="basicInfo"><!--Eyes-->
+  <input type="text" id="basic2" class="under" style="width:64px" />
+  <p class="caption">Eyes</p>
+</div>
+<div class="basicInfo"><!--Hair-->
+  <input type="text" id="basic2" class="under" style="width:64px" />
+  <p class="caption">Hair</p>
+</div>
+<div class="basicInfo"><!--Skin-->
+  <input type="text" id="basic2" class="under" style="width:64px" />
+  <p class="caption">Skin</p>
+</div>
+
+</div>
+
+<br>
+<div id="abilities" style="float:left;">
   <table>
     <th>Ability <br> Name</th>
     <th>Ability <br> Score</th>
     <th>Ability <br> Mod.</th>
     <th>Temp. <br> Score</th>
     <th>Temp. <br> Mod. </th>
-    <th></th>
-    <th>TOTAL</th>
-    <th>Current HP</th>
-    <th>Nonlethal Damage</th>
-    <th>Speed </th>
     <tr>
       <td class = "title">STR</td>
-      <td><input type="number" class="smallBox" id="ab1_1" oninput="updateMods(1)" /></td>
-      <td><input type="text" class="smallBox" id="ab1_2" readonly="readonly" /></td>
-	<td><input type="number" class="smallBox" id="ab1_3" /></td>
-      <td><input type="number" class="smallBox" id="ab1_3" /></td>
+      <td><input type="number" class="smallBox" id="ab0_0" oninput="updateMods(0)" /></td>
+      <td><input type="text"   class="smallBox" id="ab0_1" readonly="readonly" /></td>
+      <td><input type="number" class="smallBox" id="ab0_2" /></td>
+      <td><input type="number" class="smallBox" id="ab0_3" /></td> 
+    </tr>
+    <tr>
+      <td class = "title">DEX</td>
+      <td><input type="number" class="smallBox" id="ab1_0" oninput="updateMods(1)" /></td>
+      <td><input type="text"   class="smallBox" id="ab1_1" readonly="readonly" /></td>
+      <td><input type="number" class="smallBox" id="ab1_2" /></td>
+      <td><input type="number" class="smallBox" id="ab1_3" /></td> 
+    </tr>
+    <tr>
+      <td class = "title">CON</td>
+      <td><input type="number" class="smallBox" id="ab2_0" oninput="updateMods(2)" /></td>
+      <td><input type="text"   class="smallBox" id="ab2_1" readonly="readonly" /></td>
+      <td><input type="number" class="smallBox" id="ab2_2" /></td>
+      <td><input type="number" class="smallBox" id="ab2_3" /></td>
+    </tr>
+    <tr>
+      <td class = "title">INT</td>
+      <td><input type="number" class="smallBox" id="ab3_0" oninput="updateMods(3)" /></td>
+      <td><input type="text"   class="smallBox" id="ab3_1" readonly="readonly" /></td>
+      <td><input type="number" class="smallBox" id="ab3_2" /></td>
+      <td><input type="number" class="smallBox" id="ab3_3" /></td>
+    </tr>
+    <tr>
+      <td class = "title">WIS</td>
+      <td><input type="number" class="smallBox" id="ab4_0" oninput="updateMods(4)" /></td>
+      <td><input type="text"   class="smallBox" id="ab4_1" readonly="readonly" /></td>
+      <td><input type="number" class="smallBox" id="ab4_2" /></td>
+      <td><input type="number" class="smallBox" id="ab4_3" /></td>
+    </tr>
+    <tr>
+      <td class = "title">CHA</td>
+      <td><input type="number" class="smallBox" id="ab5_0" oninput="updateMods(5)" /></td>
+      <td><input type="text"   class="smallBox" id="ab5_1" readonly="readonly" /></td>
+      <td><input type="number" class="smallBox" id="ab5_2" /></td>
+      <td><input type="number" class="smallBox" id="ab5_3" /></td>
+    </tr>
+  </table>
+</div>
+<div id="HPAC" style="float:left;">
+  <table>
+    <tr>
+      <th></th>
+      <th><br>TOTAL</th>
+      <th><br>Current HP</th>
+      <th><br>Nonlethal Damage</th>
+      <th><br>Speed</th>
+    </tr>
+    <tr>
       <td class = "title">HP</td>
       <td><input type="number" class="smallBox" /></td>
       <td><input type="text" /></td>
       <td><input type="number"/></td>
-      <td><input type = "text" /></td>
-    </tr>
-    <tr>
-      <td class = "title">DEX</td>
-      <td><input type="number" class="smallBox" id="ab2_1" oninput="updateMods(2)" /></td>
-      <td><input type="text" class="smallBox" id="ab2_2" readonly="readonly" /></td>
-      <td><input type="number" class="smallBox" id="ab2_3" /></td>
-      <td><input type="number" class="smallBox" id="ab2_3" /></td>
-      <td class = "title">AC</td>
-      <td>
-	<input type="number" class="smallBox" id="ac" /> 
-      </td>
-    </tr>
-    <tr>
-	<td class = "title">CON</td>
-	<td><input type="number" class="smallBox" id="ab3_1" oninput="updateMods(3)" /></td>
-	<td><input type="text" class="smallBox" id="ab3_2" readonly="readonly" /></td>
-	<td><input type="number" class="smallBox" id="ab3_3" /></td>
-	<td><input type="number" class="smallBox" id="ab3_3" /></td>
-    </tr>
-    <tr>
-      <td class = "title">INT</td>
-      <td><input type="number" class="smallBox" id="ab4_1" oninput="updateMods(4)" /></td>
-      <td><input type="text" class="smallBox" id="ab4_2" readonly="readonly" /></td>
-      <td><input type="number" class="smallBox" id="ab4_3" /></td>
-      <td><input type="number" class="smallBox" id="ab4_3" /></td>
-    </tr>
-    <tr>
-      <td class = "title">WIS</td>
-      <td><input type="number" class="smallBox" id="ab5_1" oninput="updateMods(5)" /></td>
-      <td><input type="text" class="smallBox" id="ab5_2" readonly="readonly" /></td>
-      <td><input type="number" class="smallBox" id="ab5_3" /></td>
-      <td><input type="number" class="smallBox" id="ab5_3" /></td>
-    </tr>
-    <tr>
-      <td class = "title">CHA</td>
-      <td><input type="number" class="smallBox" id="ab5_1" oninput="updateMods(6)" /></td>
-      <td><input type="text" class="smallBox" id="ab5_2" readonly="readonly" /></td>
-      <td><input type="number" class="smallBox" id="ab5_3" /></td>
-      <td><input type="number" class="smallBox" id="ab1_3" /></td>
+      <td><input type = "text" style="width:50%;"/></td>
     </tr>
   </table>
+  <table>
+    <tr>
+      <td class = "title">AC</td>
+      <td><input type="number" class="smallBox" id="ac0" />= 10+</td>
+      <td><input type="number" class="smallBox" id="ac1" /> +</td>
+      <td><input type="number" class="smallBox" id="ac2" /> +</td>
+      <td><input type="number" class="smallBox" id="ac3" /> +</td>
+      <td><input type="number" class="smallBox" id="ac4" /> +</td>
+      <td><input type="number" class="smallBox" id="ac5" /> +</td>
+      <td><input type="number" class="smallBox" id="ac6" /> +</td>
+      <td><input type="number" class="smallBox" id="ac7" /></td>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Total</th>
+      <th>Armor</th>
+      <th>Sheild</th>
+      <th>Dex <br> Mod</th>
+      <th>Size <br> Mod</th>
+      <th>Natural <br> Armor</th>
+      <th>Deflec. <br> Mod</th>
+      <th>Misc</th>
+    </tr>
+  </table> 
 </div>
 </form>
 
+</div>
 </body>
 <html>
