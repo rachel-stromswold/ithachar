@@ -1,12 +1,4 @@
-@-webkit-keyframes disappear {//Chrome, Opera, Safari support (IDK if this is still a requirement, someone should test it.)
-  0%   {opacity:1.0;}
-  100% {opacity:0.0;}
-}
 
-@keyframes disappear {
-  0%   {opacity:1.0;}
-  100% {opacity:0.0;}
-}
 
 .basicInfo{ 
   width:auto;
