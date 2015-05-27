@@ -35,11 +35,22 @@ input.under{
 }
 
 .title{
+  margin:0px;
   font-weight: bold;
   color: white;
   background-color: black;
-  padding: 2px;
+  padding-top: 2px;
   text-align:center;
+}
+
+.subtitle{
+  display:block;
+  margin:0px;
+  font-weight:bold;
+  color:white;
+  background-color:black;
+  padding:0px;
+  font-size:10px;
 }
 
 th{
