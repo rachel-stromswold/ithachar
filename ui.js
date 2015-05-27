@@ -23,3 +23,12 @@ function collapseField(field){
     else
 	field.style.display = "inline";
 }
+
+function updateAC() {
+	var ac = 10;
+	var acMods = document.getElementsByClassName('acMod');
+	for(var i = 0; i < acMods.length; ++i) {
+		ac += +(acMods[i].value);
+	}
+	document.getElementById('ac0').value=ac;
+}
