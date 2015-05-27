@@ -53,6 +53,14 @@ input.under{
   font-size:10px;
 }
 
+.shortUnderline{
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  border-bottom:black solid 1px;
+  width:64px;
+}
+
 th{
   font-size:10px;
   text-align:left;
