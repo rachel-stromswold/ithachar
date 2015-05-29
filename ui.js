@@ -41,3 +41,20 @@ function updateAC() {
 	document.getElementById('ac8').value=t_ac;
 	document.getElementById('ac9').value=f_ac;
 }
+
+var SKILL_NUM=35;//all of the skills not counting skills that have multiple forms ie. all Knowledge skills count as one
+
+function updateSkills(skillId){
+		val2=+(document.getElementById(skillId+"_2").value);
+		val3=+(document.getElementById(skillId+"_3").value);
+		val4=+(document.getElementById(skillId+"_4").value);
+		document.getElementById(skillId+"_1").value=val2+val3+val4;
+}
+
+$(document).ready(function() {
+	for(var i=0;i<SKILL_NUM;i++){
+		document.getElementById("skill0_"+i+"_2").setAttribute("oninput", "updateSkills('skill0_"+i+"')");
+		document.getElementById("skill0_"+i+"_3").setAttribute("oninput", "updateSkills('skill0_"+i+"')");
+		document.getElementById("skill0_"+i+"_4").setAttribute("oninput", "updateSkills('skill0_"+i+"')");
+	}
+});
